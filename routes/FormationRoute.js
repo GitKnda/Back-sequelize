@@ -11,7 +11,15 @@ FormationController.getAllFormation(req, res); // on declare la fonction getAllF
 
 router.post("/", (req, res) => { 
     FormationController.addFormation(req, res); 
-}); 
+});
+
+router.delete("/", (req, res) => { 
+    FormationController.deleteFormation(req, res); 
+});
+
+router.get("/:id", (req, res) => { 
+    FormationController.getFormationById(req, res); 
+});
 
 module.exports = router; 
 // on exporte le router

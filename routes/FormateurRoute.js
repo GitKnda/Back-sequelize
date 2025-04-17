@@ -9,5 +9,13 @@ router.get("/", (req, res) => { // on declare la route get
 FormateurController.getAllFormateur(req, res); // on declare la fonction getAllFormateur 
 });
 
+router.post("/", (req, res) => { 
+    FormateurController.addFormateur(req, res); 
+});
+
+router.get("/:id", (req, res) => { 
+    FormateurController.getFormateurById(req, res); 
+});
+
 module.exports = router; 
 // on exporte le router
