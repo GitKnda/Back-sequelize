@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize'); 
 // on declare une constante Sequelize qui est le module Sequelize 
-const config = require('../config/config.json'); 
 // on declare une constante config qui est le fichier de configuration config.json
+require("dotenv").config(); 
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -10,9 +10,10 @@ const sequelize = new Sequelize(
     {
       host: process.env.DB_HOST,
       dialect: "mysql",
-      port: process.env.PORT,
+      port: process.env.DB_PORT,
     }
   );
 
 module.exports = sequelize; 
 // on exporte la constante sequelize pour l'utiliser dans d'autres fichiers
+
