@@ -17,5 +17,13 @@ router.get("/:id", (req, res) => {
     StagiaireController.getStagiairesById(req, res); 
 });
 
+router.put("/:id", (req, res) => { 
+    StagiaireController.updateStagiaires(req, res); 
+});
+
+router.delete("/:id", (req, res) => { 
+    StagiaireController.deleteStagiaires(req, res); 
+});
+
 module.exports = router; 
 // on exporte le router

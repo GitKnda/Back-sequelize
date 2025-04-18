@@ -17,5 +17,13 @@ router.get("/:id", (req, res) => {
     FormateurController.getFormateurById(req, res); 
 });
 
+router.put("/:id", (req, res) => { 
+    FormateurController.updateFormateur(req, res); 
+});
+
+router.delete("/:id", (req, res) => { 
+    FormateurController.deleteFormateur(req, res); 
+});
+
 module.exports = router; 
 // on exporte le router

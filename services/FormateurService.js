@@ -12,6 +12,12 @@ async addFormateur(formateur) { // on declare la fonction addFormation
 async getFormateurById(id) { // on declare la fonction getFormationById 
     return await Formateur.findByPk(id); // on renvoie la formation par son id 
 }
+async updateFormateur(id, formateur) { // on declare la fonction updateFormation 
+    return await Formateur.update(formateur, { where: { id_formateur: id } }); // on renvoie la formation mise à jour 
+}
+async deleteFormateur(id) { // on declare la fonction deleteFormation 
+    return await Formateur.destroy({ where: { id_formateur: id } }); // on renvoie la formation supprimée 
+}
 } 
 module.exports = new FormateurService(); 
 // on exporte le service formateur 

@@ -12,6 +12,12 @@ async addStagiaires(stagiaires) { // on declare la fonction addFormation
 async getStagiairesById(id) { // on declare la fonction getFormationById 
     return await Stagiaires.findByPk(id); // on renvoie la formation par son id 
 }
+async updateStagiaires(id, stagiaires) { // on declare la fonction updatestagiaires 
+    return await Stagiaires.update(stagiaires, { where: { id_stagiaires: id } }); // on renvoie la stagiaires mise à jour 
+}
+async deleteStagiaires(id) { // on declare la fonction deletestagiaires 
+    return await Stagiaires.destroy({ where: { id_stagiaires: id } }); // on renvoie la stagiaires supprimée 
+}
 } 
 module.exports = new StagiaireService(); 
 // on exporte le service stagiaire 
